@@ -372,3 +372,4 @@ C:\Users\mateus_v_santos\source\repos\SenaiMvc\obj\Debug\net8.0\SenaiMvc.csproj.
 C:\Users\mateus_v_santos\source\repos\SenaiMvc\obj\Debug\net8.0\SenaiMvc.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\mateus_v_santos\source\repos\SenaiMvc\obj\Debug\net8.0\SenaiMvc.csproj.Up2Date
 C:\Users\mateus_v_santos\source\repos\SenaiMvc\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\mateus_v_santos\source\repos\SenaiMvc\obj\Debug\net8.0\SenaiMvc.sourcelink.json

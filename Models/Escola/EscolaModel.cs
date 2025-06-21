@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SenaiMvc.Models.Escola
 {
@@ -10,5 +11,7 @@ namespace SenaiMvc.Models.Escola
 
         public EnderecoModel? Endereco { get; set; }
 
+        public List<SelectListItem> Estados { get; set; } = new();
+        public List<SelectListItem> Cidades { get; internal set; }
     }
 }
