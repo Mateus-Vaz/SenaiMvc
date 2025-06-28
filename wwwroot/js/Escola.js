@@ -1,16 +1,17 @@
 ﻿var escola = function () {
     return {
-        CarregarCidadesPorUF: function (uf) {
+        carregarCidadesPorUF: function (uf) {
             if (!uf) return;
             var select = document.getElementById("Endereco_Cidade");
-            select.innerHTML = '<option value="">Carregando...<option>';
+            select.innerHTML = '<option value="">Carregando...</option>';
 
-            fetch(` /escola/ObterCidadesPorUF?uf=${uf}`)
-                .then(response => responce.jason())
-                .then(data => {
+            fetch(`/escola/ObterCidadesPorUF?uf=${uf}`)
+                .then(response => response.json())
+                .then(cidades => {
                     select.innerHTML = '<option value="">-- Selecione a cidade --</option';
 
-                    data.forEach(function (cidade) {
+
+                    cidades.forEach(function (cidade) {
                         var option = document.createElement("option");
                         option.value = cidade.id;
                         option.textContent = cidade.nome;
@@ -19,10 +20,8 @@
                 })
                 .catch(err => {
                     console.error('Erro ao carregar cidades:', err);
-                    
+
                 });
-
-
 
         }
     }

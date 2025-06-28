@@ -11,7 +11,7 @@ namespace SenaiMvc.Models.Escola
 
         public EnderecoModel? Endereco { get; set; }
 
-        public List<SelectListItem> Estados { get; set; } = new();
-        public List<SelectListItem> Cidades { get; internal set; }
+        public List<SelectListItem>? Estados { get; set; } = new();
+        public List<SelectListItem>? Cidades { get; internal set; }
     }
 }

@@ -4,17 +4,17 @@
 
 <p class="h2">Escola</p>
 
-<form method="post"asp-action="Form" asp-controller="Escola">
+<form method="post" asp-action="Form" asp-controller="Escola">
 
-<div class="mb-3">
-	<input type="hidden"asp-for="Id">
-	<input type="hidden" asp-for="Endereco.Id">
+	<div class="mb-3">
+		<input type="hidden" asp-for="Id">
+		<input type="hidden" asp-for="Endereco.Id">
 
 
-	<label class="form-label">Nome Escola</label>
-	<input type="text" class="form-control" asp-for="Nome">
-	@Html.ValidationMessageFor(m => m.Nome, "", new{ @class = "text-danger" })
-</div>
+		<label class="form-label">Nome Escola</label>
+		<input type="text" class="form-control" asp-for="Nome">
+		@Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+	</div>
 	<div class="row">
 		<div class="col-md-5">
 			<label class="form-label">Rua</label>
@@ -31,29 +31,29 @@
 			<input type="text" class="form-control" asp-for="Endereco.Numero">
 			@Html.ValidationMessageFor(m => m.Endereco.Numero, "", new { @class = "text-danger" })
 		</div>
-</div>
+	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<label class="form-label">Estado</label>
-			<select asp-for="Endereco.Estado" asp-items="Model.Estados"
-				class="form-control">
-				<option value="">Selecione um estado</option>" 
-				</select> 
+			<select asp-for="Endereco.Estado" asp-items="Model.Estados" onchange="escola.carregarCidadesPorUF(this.value)"
+					class="form-control">
+				<option value="">Selecione um estado</option>
+			</select>
 			@Html.ValidationMessageFor(m => m.Endereco.Estado, "", new { @class = "text-danger" })
 		</div>
 		<div class="col-md-6">
 			<label class="form-label">Cidade</label>
-			<input type="text" class="form-control" asp-for="Endereco.Cidade">
+			<select asp-for=Endereco.Cidade asp-items="Model.Cidades" class="form-control">
+				<option value="">Selecione uma cidade</option>
+			</select>
 			@Html.ValidationMessageFor(m => m.Endereco.Cidade, "", new { @class = "text-danger" })
 		</div>
-		
-		
 
-
-<div class="d-grid gap-2 d-md-block">
-	<button class="btn btn-primary" type="submit">Salvar</button>
+		<div class="d-grid gap-2 d-md-block">
+			<button class="btn btn-primary" type="submit">Salvar</button>
+		</div>
 	</div>
 </form>
-@section Scripts{ 
-	<script src="/js/escola.js"></script>
+@section Scripts {
+	<script src="~/js/Escola.js"></script>
 }

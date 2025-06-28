@@ -27,7 +27,7 @@ namespace SenaiMvc.Controllers
                     Text = e.Nome
                 }).ToList();
 
-        }
+        }        
         private async Task AlimentarCidades(EscolaModel model, string uf)
         {
             using var httpClient = new HttpClient();
@@ -69,25 +69,54 @@ namespace SenaiMvc.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (model.Endereco.Id == null)                
-                    model.Endereco.Id =0;
-                
+                if (model.Endereco.Id == null)
+                    model.Endereco.Id = 0;
+
                 var retorno = await _apiService.PostAsync<EscolaModel>("Escola", model);
                 return Redirect("Index");
             }
-            return View();
+            await AlimentarEstados(model);
+            return View(model);
         }
         [HttpGet]
         public async Task<IActionResult> Editar(long id)
         {
             var model = await _apiService.GetAsync<EscolaModel>($"Escola/PegarPorId?id={id}");
-            return View("Form",model);
+            if (model.Endereco == null)
+                model.Endereco = new EnderecoModel();
+            await AlimentarEstados(model);
+            if (!string.IsNullOrEmpty(model.Endereco.Estado))
+            {
+                await AlimentarCidades(model, model.Endereco.Estado);
+            }
+            return View("Form", model);
         }
         [HttpGet]
         public async Task<IActionResult> Excluir(long id)
         {
             var retorno = await _apiService.DeleteAsync<EscolaModel>($"Escola?id={id}");
             return Redirect("/Escola/Index");
+        }
+        [HttpGet]
+        public async Task<IActionResult> ObterCidadesPorUF(string uf)
+        {
+            using var httpClient = new HttpClient();
+            var responce = await httpClient.GetAsync($"https://servicodados.ibge.gov.br/api/v1/localidades/estados/{uf}/distritos");
+
+            if (!responce.IsSuccessStatusCode)
+            {
+                return BadRequest("Erro ao buscar cidades");
+            }
+                var json = await responce.Content.ReadAsStringAsync();
+                var cidades = JsonConvert.DeserializeObject<List<CidadeIBGE>>(json);
+
+                var resultado = cidades
+                    .OrderBy(c => c.Nome)
+                    .Select(c => new { id = c.Id, nome = c.Nome })
+                    .ToList();
+            
+                return Json(resultado);
+            
         }
     }
 }

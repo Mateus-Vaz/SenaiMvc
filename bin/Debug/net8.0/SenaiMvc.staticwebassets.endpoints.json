@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 07 Jun 2025 11:16:03 GMT"
+          "Value": "Sat, 28 Jun 2025 12:09:00 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 07 Jun 2025 11:16:03 GMT"
+          "Value": "Sat, 28 Jun 2025 12:09:00 GMT"
         }
       ],
       "EndpointProperties": [
@@ -245,6 +245,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "js/Escola.js",
+      "AssetFile": "js/Escola.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "998"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Uume2bo1UiEQVbezbMPFbq5vhhB41A5ifhZodolwWq8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Jun 2025 13:03:01 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Uume2bo1UiEQVbezbMPFbq5vhhB41A5ifhZodolwWq8="
+        }
+      ]
+    },
+    {
+      "Route": "js/Escola.ykey7t7c2y.js",
+      "AssetFile": "js/Escola.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "998"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Uume2bo1UiEQVbezbMPFbq5vhhB41A5ifhZodolwWq8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Jun 2025 13:03:01 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ykey7t7c2y"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Uume2bo1UiEQVbezbMPFbq5vhhB41A5ifhZodolwWq8="
+        },
+        {
+          "Name": "label",
+          "Value": "js/Escola.js"
         }
       ]
     },
